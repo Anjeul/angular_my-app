@@ -1,24 +1,101 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<a href="#contenu" class="skip-link">Aller au contenu principal</a>
 
-<main class="main">
-  <div class="content">
-    <app-page-header />
-  </div>
-</main>
+<div class="app" [class.app--nav-open]="navOpen()">
+  <header class="app__header topbar topbar--employe">
+    <button
+      class="topbar__menu"
+      type="button"
+      data-nav-toggle
+      aria-expanded="false"
+      aria-controls="navigation"
+      [attr.aria-expanded]="navOpen()"
+      (click)="toggleNav()"
+    >
+      <svg class="burger-icon" xmlns="http://w3.org" viewBox="0 0 24 24" fill="none">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+      <span class="sr-only">Menu</span>
+    </button>
 
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+    <a class="brand brand--mobile" href="dashboard-employe.html">
+      <img class="brand__logo" src="logo.svg" alt="" width="32" height="32" />
+      TC
+    </a>
+    <a class="brand brand--desktop" href="dashboard-employe.html">
+      <img class="brand__logo" src="logo.svg" alt="" width="32" height="32" />
+      {{ appName }}
+    </a>
+    <div class="menu-dev">
+      <a href="dashboard-employe.html">Employé</a>
+      <a href="dashboard-manager.html">Manager</a>
+      <a href="dashboard-rh.html">RH</a>
+    </div>
+    <div class="topbar__actions">
+      <div class="user">
+        <span class="avatar" aria-hidden="true">CM</span>
+        <div class="user__info">
+          <p class="user__name">{{ userName() }}</p>
+          <p class="user__role">Développeuse</p>
+        </div>
+      </div>
+    </div>
+  </header>
+  <aside class="app__sidebar sidebar" id="navigation" hidden>
+    <nav aria-label="Navigation principale">
+      <h2 class="nav__heading" id="nav-perso">Mon espace</h2>
+      <ul class="nav" role="list" aria-labelledby="nav-perso">
+        <li>
+          <a class="nav__link" href="dashboard-employe.html" aria-current="page">
+            <i data-lucide="layout-dashboard" aria-hidden="true"></i>
+            Tableau de bord
+          </a>
+        </li>
+        <li>
+          <a class="nav__link" href="conges-demande.html">
+            <i data-lucide="calendar-days" aria-hidden="true"></i>Mes congés
+          </a>
+        </li>
+        <li>
+          <a class="nav__link" href="note-frais-nouvelle.html">
+            <i data-lucide="receipt" aria-hidden="true"></i>Notes de frais</a
+          >
+        </li>
+        <li>
+          <a class="nav__link" href="materiel.html"
+            ><i data-lucide="laptop" aria-hidden="true"></i>Mon matériel</a
+          >
+        </li>
+        <li>
+          <a class="nav__link" href="profil.html"
+            ><i data-lucide="user-round" aria-hidden="true"></i> Mon profil
+          </a>
+        </li>
+      </ul>
+    </nav>
 
-<router-outlet />
+    <div class="sidebar__footer">
+      <button
+        type="button"
+        class="sidebar__logout nav__link"
+        onclick="window.location.href = './login.html'"
+      >
+        <i data-lucide="log-out"></i>
+        Déconnexion
+      </button>
+    </div>
+  </aside>
+
+  <main class="app__main" id="contenu" tabindex="-1">
+    <div class="container">
+      <div class="page-header">
+        <div>
+          <h1>Bonjour {{ userName() }}</h1>
+        </div>
+      </div>
+
+      <router-outlet />
+    </div>
+  </main>
+</div>

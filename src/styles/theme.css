@@ -1,0 +1,77 @@
+/* ==========================================================================
+   theme.css - Votre identite visuelle
+   --------------------------------------------------------------------------
+   Ce fichier est charge APRES tokens.css : toute variable redefinie ici
+   remplace celle du design system commun.
+
+   Regles :
+   - ne surchargez que des tokens SEMANTIQUES (--color-primary, --font-sans...)
+   - verifiez chaque couple texte / fond avec un outil de contraste
+     (WebAIM Contrast Checker) : 4.5:1 minimum pour le texte.
+
+   La version de reference garde le theme par defaut. Exemple de theme
+   "vert foret" ci-dessous, a decommenter pour tester.
+   ========================================================================== */
+
+/*
+:root {
+  --color-primary: #166534;
+  --color-primary-hover: #14532d;
+  --color-primary-soft: #f0fdf4;
+  --color-focus: #15803d;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --radius: 4px;
+}
+*/
+:root {
+  --font-sans: "MonaSans", sans-serif;
+  --color-link-on-dark: #f9f5fe;
+  --color-text: #0d021f;
+  --color-bg: #f9f5fe;
+  --color-focus: var(--violet-650);
+
+  /* EMPLOYÉ — Violet */
+  --color-primary: #6b21f2;
+  --color-primary-hover: #48189e;
+  --color-primary-soft: #f1ebfc;
+
+  /* RH — Rose */
+  --color-secondary: #f77496;
+  --color-secondary-hover: #b83d60;
+  --color-secondary-soft: #fff0f4;
+
+  /* MANAGER — Orange corail */
+  --color-accent: #f57355;
+  --color-accent-hover: #b8452b;
+  --color-accent-soft: #fff0e9;
+
+  /* Thème par défaut : Employé */
+  --theme-color: var(--color-primary);
+  --theme-color-hover: var(--color-primary-hover);
+  --theme-color-soft: var(--color-primary-soft);
+
+  /* Manager */
+  [data-role="manager"] {
+    --theme-color: var(--color-accent);
+    --theme-color-hover: var(--color-accent-hover);
+    --theme-color-soft: var(--color-accent-soft);
+  }
+
+  /* RH */
+  [data-role="rh"] {
+    --theme-color: var(--color-secondary);
+    --theme-color-hover: var(--color-secondary-hover);
+    --theme-color-soft: var(--color-secondary-soft);
+  }
+
+  /* taille radius */
+  --radius: 4px;
+}
+
+@font-face {
+  font-family: "MonaSans";
+  src: url("/assets/fonts/MonaSans.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

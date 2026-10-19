@@ -9,5 +9,10 @@ import { PageHeader } from './shared/page-header/page-header';
   templateUrl: './app.html',
 })
 export class App {
-  protected readonly title = signal('my-app');
+  protected readonly appName = 'TechCorp RH';
+  protected readonly userName = signal('Claire Martin');
+  protected readonly navOpen = signal(false);
+  protected toggleNav(): void {
+    this.navOpen.update((open) => !open);
+  }
 }

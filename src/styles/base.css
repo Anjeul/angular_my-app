@@ -1,0 +1,116 @@
+/* ==========================================================================
+   base.css - Styles des balises HTML nues (aucune classe ici)
+   A completer le jour 1. Utilisez UNIQUEMENT les variables de tokens.css.
+
+   A faire :
+   - html : police, couleur de texte, couleur de fond
+   - body : taille et interligne de base
+   - h1 a h4 : tailles, graisse, interligne serre
+   - a : couleur, etat :hover
+   - :focus-visible : contour visible pour la navigation clavier
+   ========================================================================== */
+html {
+  scrollbar-width: auto;
+  scrollbar-color: auto;
+}
+/* Scrollbar moderne */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  margin-block: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #c4c4d0;
+  border: 1px solid transparent;
+  background-clip: padding-box;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #9494a8;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+html {
+  font-family: var(--font-sans);
+  font-size: 100%;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+body {
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: var(--leading-tight);
+  font-weight: var(--weight-semibold);
+}
+
+h1 {
+  font-size: var(--text-2xl);
+}
+h2 {
+  font-size: var(--text-xl);
+}
+h3 {
+  font-size: var(--text-lg);
+}
+h4 {
+  font-size: var(--text-base);
+}
+
+@media (min-width: 64em) {
+  h1 {
+    font-size: var(--text-3xl);
+  }
+}
+
+a {
+  color: var(--color-primary);
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+section {
+  margin: 3em 0;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+h2 {
+  margin-bottom: 1rem;
+}
+
+/* Contour visible à la navigation clavier. Ne jamais le supprimer. */
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+.menu-dev {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.menu-dev a {
+  color: white;
+}
