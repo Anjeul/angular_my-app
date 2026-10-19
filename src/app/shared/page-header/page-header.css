@@ -1,0 +1,14 @@
+.header {
+  width: 100%;
+  background: rgb(205, 233, 238);
+  padding: 1rem;
+}
+.header nav {
+  display: flex;
+  gap: 1rem;
+}
+.header a {
+  text-decoration: none;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+}
