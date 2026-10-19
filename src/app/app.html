@@ -6,7 +6,6 @@
       class="topbar__menu"
       type="button"
       data-nav-toggle
-      aria-expanded="false"
       aria-controls="navigation"
       [attr.aria-expanded]="navOpen()"
       (click)="toggleNav()"
@@ -42,50 +41,8 @@
       </div>
     </div>
   </header>
-  <aside class="app__sidebar sidebar" id="navigation" hidden>
-    <nav aria-label="Navigation principale">
-      <h2 class="nav__heading" id="nav-perso">Mon espace</h2>
-      <ul class="nav" role="list" aria-labelledby="nav-perso">
-        <li>
-          <a class="nav__link" href="dashboard-employe.html" aria-current="page">
-            <i data-lucide="layout-dashboard" aria-hidden="true"></i>
-            Tableau de bord
-          </a>
-        </li>
-        <li>
-          <a class="nav__link" href="conges-demande.html">
-            <i data-lucide="calendar-days" aria-hidden="true"></i>Mes congés
-          </a>
-        </li>
-        <li>
-          <a class="nav__link" href="note-frais-nouvelle.html">
-            <i data-lucide="receipt" aria-hidden="true"></i>Notes de frais</a
-          >
-        </li>
-        <li>
-          <a class="nav__link" href="materiel.html"
-            ><i data-lucide="laptop" aria-hidden="true"></i>Mon matériel</a
-          >
-        </li>
-        <li>
-          <a class="nav__link" href="profil.html"
-            ><i data-lucide="user-round" aria-hidden="true"></i> Mon profil
-          </a>
-        </li>
-      </ul>
-    </nav>
 
-    <div class="sidebar__footer">
-      <button
-        type="button"
-        class="sidebar__logout nav__link"
-        onclick="window.location.href = './login.html'"
-      >
-        <i data-lucide="log-out"></i>
-        Déconnexion
-      </button>
-    </div>
-  </aside>
+  <app-sidebar />
 
   <main class="app__main" id="contenu" tabindex="-1">
     <div class="container">

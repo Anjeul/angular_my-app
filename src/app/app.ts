@@ -3,8 +3,9 @@ import { RouterOutlet } from '@angular/router';
 import { PageHeader } from './shared/page-header/page-header';
 import { Employee } from './models/employee';
 import { LEAVE_STATUS_LABELS, LEAVE_TYPE_LABELS, LeaveRequest } from './models/leave-request';
+import { Sidebar } from './layout/sidebar/sidebar';
 @Component({
-  imports: [RouterOutlet, PageHeader],
+  imports: [RouterOutlet, PageHeader, Sidebar],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
